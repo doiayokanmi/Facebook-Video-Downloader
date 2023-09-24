@@ -76,7 +76,7 @@ const Main: React.FC = () => {
             onClick={handleDownload}
             className="h-full text-white bg-black flex absolute right-0 rounded-none p-4 border-0"
           >
-            <ArrowBigDownDash className="mr-2" /> Download
+            <ArrowBigDownDash className="mr-2" /> Donload
           </button>
         </div>
       </section>
