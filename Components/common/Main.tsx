@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ArrowBigDownDash } from "lucide-react";
 import { useQuery, useQueryClient } from "react-query";
+import { ArrowBigDownDash } from "lucide-react";
 
 const Main: React.FC = () => {
   const [urlInput, setUrlInput] = useState<string>("");
   const queryClient = useQueryClient();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [fetchedData, setFetchedData] = useState<any>(null); // State to store fetched data
+  const [fetchedData, setFetchedData] = useState<any>(null); 
 
   const url = `https://facebook-reel-and-video-downloader.p.rapidapi.com/app/main.php?url=${urlInput}`;
   const options = {

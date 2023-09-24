@@ -1,18 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  ShieldQuestion,
-  Menu,
-  ScrollText,
-  MailPlus,
-  Coffee,
-  Github,
-  Facebook,
-  Twitter,
-} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Coffee, Facebook, Github, MailPlus, Menu, ScrollText, ShieldQuestion, Twitter } from "lucide-react";
 
 const NavBar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);

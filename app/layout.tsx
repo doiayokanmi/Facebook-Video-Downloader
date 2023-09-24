@@ -2,10 +2,7 @@
 
 import './globals.css'
 import { metadata } from '../util/index'
-import {
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 export default function RootLayout({
   children,
