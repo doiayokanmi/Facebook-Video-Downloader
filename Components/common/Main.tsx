@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { useQuery, useQueryClient } from "react-query";
 import { ArrowBigDownDash } from "lucide-react";
+import { useQueryClient } from "react-query";
+import { useQuery } from "react-query";
 
 const Main: React.FC = () => {
   const [urlInput, setUrlInput] = useState<string>("");
