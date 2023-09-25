@@ -48,7 +48,7 @@ const Main: React.FC = () => {
           Download that Facebook video and reel you love so much
         </p>
 
-        <div className="flex items-center relative p-0 border-2 border-primary w-full md:w-2/3 my-8 overflow-hidden">
+        <div className="flex items-center relative p-0 border-2 border-primary w-full md:w-2/3 my-24 overflow-hidden">
           <input
             type="text"
             className="p-4 border-0 outline-0 w-full"
