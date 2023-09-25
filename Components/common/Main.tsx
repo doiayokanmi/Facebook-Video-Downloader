@@ -32,7 +32,7 @@ const Main: React.FC = () => {
     }
   };
 
-  const { isError, error } = useQuery(["facebook-video"], {
+  const { isError, error } = useQuery(["facebook-video", urlInput], {
     queryFn: fetchData,
     onError: () => {
       setIsLoading(false);
