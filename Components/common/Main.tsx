@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowBigDownDash } from "lucide-react";
-import { useQueryClient } from "@tanstack/react-query";
-import { useQuery } from "@tanstack/react-query";
+import { useQueryClient } from "react-query";
+import { useQuery } from "react-query";
 
 
 const Main: React.FC = () => {
@@ -32,24 +32,33 @@ const Main: React.FC = () => {
     }
   };
 
-  const { isError, error } = useQuery(["facebook-video", urlInput], {
-    queryFn: fetchData,
-    onError: () => {
-      setIsLoading(false);
+  const { isError, error } = useQuery(
+    "facebook-video",
+    async () => {
+      try {
+        const data = await fetchData();
+        return data;
+      } catch (error) {
+        throw error;
+      }
     },
-    onSuccess: () => {
-      setIsLoading(false);
-    },
-    enabled: false,
-    staleTime: 60000,
-    cacheTime: 60000,
-  });
+    {
+      onError: () => {
+        setIsLoading(false);
+      },
+      onSuccess: () => {
+        setIsLoading(false);
+      },
+      enabled: false,
+      staleTime: 60000,
+      cacheTime: 60000,
+    }
+  );
   
 
   const handleDownload = () => {
     setIsLoading(true);
-    queryClient.prefetchQuery(["facebook-video"]);
-    setIsLoading(false);
+    queryClient.prefetchQuery("facebook-video");
   };
 
 
