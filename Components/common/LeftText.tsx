@@ -6,7 +6,7 @@ const LeftText = () => {
     <>
       <div className="basis-1/2 border border-slate-500">
         <h1 className="bg-primary p-4 text-white">Latest News</h1>
-        <div className="px-4 overflow-scroll h-80 overflow-x-hidden">
+        <div className="px-4 overflow-scroll max-h-[300px] overflow-x-hidden">
           {latestNews.map((news, index) => (
             <div
               key={index}

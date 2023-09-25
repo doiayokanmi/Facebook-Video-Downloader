@@ -40,7 +40,7 @@ export const latestNews = [
   },
   {
     title: 'This Facebook Video and Reel Downloader web app is created by Ibrahim Damilola Dhikirullahi',
-    color: 'bg-slate-500'
+    color: 'bg-primary-foreground'
   },
   {
     title: 'This Facebook Video and Reel Downloader web app is created by Ibrahim Damilola Dhikirullahi',
@@ -48,6 +48,14 @@ export const latestNews = [
   },
   {
     title: 'This Facebook Video and Reel Downloader web app is created by Ibrahim Damilola Dhikirullahi',
-    color: 'bg-green-500'
+    color: 'bg-blue-500'
+  },
+  {
+    title: 'This Facebook Video and Reel Downloader web app is created by Ibrahim Damilola Dhikirullahi',
+    color: 'bg-yellow-500'
+  },
+  {
+    title: 'This Facebook Video and Reel Downloader web app is created by Ibrahim Damilola Dhikirullahi',
+    color: 'bg-blue-700'
   },
 ]
