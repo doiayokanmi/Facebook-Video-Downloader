@@ -32,25 +32,23 @@ const Main: React.FC = () => {
     }
   };
 
-  const { isError, error } = useQuery(
-    "facebook-video",
-    () => fetchData(),
-    {
-      onError: () => {
-        setIsLoading(false);
-      },
-      onSuccess: () => {
-        setIsLoading(false);
-      },
-      enabled: false,
-      staleTime: 60000,
-      cacheTime: 60000,
-    }
-  );
+  const { isError, error } = useQuery(["facebook-video"], {
+    queryFn: fetchData,
+    onError: () => {
+      setIsLoading(false);
+    },
+    onSuccess: () => {
+      setIsLoading(false);
+    },
+    enabled: false,
+    staleTime: 60000,
+    cacheTime: 60000,
+  });
+  
 
   const handleDownload = () => {
     setIsLoading(true);
-    queryClient.prefetchQuery("facebook-video");
+    queryClient.prefetchQuery(["facebook-video"]);
   };
 
 
@@ -78,7 +76,7 @@ const Main: React.FC = () => {
             onClick={handleDownload}
             className="h-full text-white bg-black flex absolute right-0 rounded-none p-4 border-0"
           >
-            <ArrowBigDownDash className="mr-2" /> Donload
+            <ArrowBigDownDash className="mr-2" /> Download
           </button>
         </div>
       </section>
