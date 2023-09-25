@@ -3,15 +3,15 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowBigDownDash } from "lucide-react";
-import { useQueryClient } from "react-query";
-import { useQuery } from "react-query";
 
 
 const Main: React.FC = () => {
   const [urlInput, setUrlInput] = useState<string>("");
-  const queryClient = useQueryClient();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [fetchedData, setFetchedData] = useState<any>(null); 
+  const [isError, setIsError] = useState<boolean>(false);
+  const [fetchedData, setFetchedData] = useState<any>(null);
+  const [error, setError] = useState<any>(null); 
+
 
   const url = `https://facebook-reel-and-video-downloader.p.rapidapi.com/app/main.php?url=${urlInput}`;
   const options = {
@@ -23,42 +23,17 @@ const Main: React.FC = () => {
   };
 
   const fetchData = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(url, options);
       const data = await response.json(); // Assuming the response is in JSON format
-      setFetchedData(data); // Update the state with fetched data
+      setFetchedData(data);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setError(error);
+      setIsError(true)
     }
-  };
-
-  const { isError, error } = useQuery(
-    "facebook-video",
-    async () => {
-      try {
-        const data = await fetchData();
-        return data;
-      } catch (error) {
-        throw error;
-      }
-    },
-    {
-      onError: () => {
-        setIsLoading(false);
-      },
-      onSuccess: () => {
-        setIsLoading(false);
-      },
-      enabled: false,
-      staleTime: 60000,
-      cacheTime: 60000,
-    }
-  );
-  
-
-  const handleDownload = () => {
-    setIsLoading(true);
-    queryClient.prefetchQuery("facebook-video");
   };
 
 
@@ -83,7 +58,7 @@ const Main: React.FC = () => {
           />
 
           <button
-            onClick={handleDownload}
+            onClick={fetchData}
             className="h-full text-white bg-black flex absolute right-0 rounded-none p-4 border-0"
           >
             <ArrowBigDownDash className="mr-2" /> Download
