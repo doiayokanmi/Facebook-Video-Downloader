@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowBigDownDash } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 
 const Main: React.FC = () => {
