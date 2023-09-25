@@ -40,7 +40,7 @@ const Main: React.FC = () => {
   return (
     <>
       <section className="flex flex-col justify-center items-center mt-24 px-4 md:px-24">
-        <Image src="/images/logo.png" width={504} height={400} alt="logo" />
+        <Image src="/images/logo.PNG" width={504} height={400} alt="logo" />
         <p className="font-extrabold md:text-2xl text-center">
           Facebook Video and Reel Download for Free
         </p>
@@ -88,7 +88,7 @@ const Main: React.FC = () => {
             alt="video thumbnail"
           />
           <div className="px-4 flex flex-col justify-between">
-            <h1 className="font-bold text-3xl overflow-hidden capitalize text-center md:text-start mb-4">
+            <h1 className="font-bold text-3xl py-4 md:py-0 overflow-hidden capitalize text-center md:text-start mb-4">
               {fetchedData?.title}
             </h1>
 

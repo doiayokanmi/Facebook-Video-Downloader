@@ -18,7 +18,7 @@ const NavBar = () => {
             <Menu className="md:hidden cursor-pointer" onClick={toggleNav} />
             <Link href="/" className="font-bold">
               <Image
-                src={"/images/logo.png"}
+                src={"/images/logo.PNG"}
                 width={150}
                 height={100}
                 alt="logo"
