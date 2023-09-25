@@ -49,6 +49,7 @@ const Main: React.FC = () => {
   const handleDownload = () => {
     setIsLoading(true);
     queryClient.prefetchQuery(["facebook-video"]);
+    setIsLoading(false);
   };
 
 
