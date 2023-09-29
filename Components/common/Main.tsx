@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowBigDownDash } from "lucide-react";
+import Particles from "../Particles";
 
 
 const Main: React.FC = () => {
@@ -116,6 +117,8 @@ const Main: React.FC = () => {
           </div>
         </section>
       ) : null}
+            <Particles id="tsparticles" />
+
     </>
   );
 };

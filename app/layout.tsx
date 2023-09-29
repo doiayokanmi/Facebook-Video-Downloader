@@ -1,3 +1,5 @@
+'use client'
+
 import './globals.css'
 import { metadata } from '../util/index'
 
@@ -10,6 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>{children}</body>
+      
     </html>
   )
 }
